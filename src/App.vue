@@ -1,15 +1,21 @@
 <script setup>
-import { ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, watch, nextTick } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const routes = ref([
   { label: 'Json Formatter', route: 'json-formatter' },
-  { label: 'Url Decoder', route: 'url-decoder' },
+  { label: 'URL Decoder', route: 'url-decoder' },
+  { label: 'Upsig Decoder', route: 'upsig-decoder' },
+  { label: 'Settings', route: 'settings' },
 ])
 
-const activeRoute = ref('json-formatter')
-
 const router = useRouter()
+const route = useRoute()
+const activeRoute = ref(route.name || '')
+// 启动时router可能未ready，导致拿到的route.name是undefined
+router.isReady().then(() => {
+  activeRoute.value = route.name
+})
 watch(activeRoute, async (n, o) => {
   if (n === o) {
     return

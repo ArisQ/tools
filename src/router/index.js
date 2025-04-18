@@ -17,6 +17,16 @@ const router = createRouter({
       name: 'url-decoder',
       component: () => import('../views/UrlDecoderView.vue'),
     },
+    {
+      path: '/upsig-decoder',
+      name: 'upsig-decoder',
+      component: () => import('../views/UpsigDecoderView.vue'),
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('../views/SettingView.vue'),
+    },
   ],
 })
 

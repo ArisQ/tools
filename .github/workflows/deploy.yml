@@ -26,6 +26,8 @@ jobs:
           node-version: 20
       - run: yarn install
       - run: yarn build
+      # history mode下路由页面会请求对应的文件，导致404，通过复制到404.html来返回页面
+      # 注意此时的状态码为404，需要fix
       - run: cp dist/index.html dist/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
