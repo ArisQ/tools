@@ -17,6 +17,16 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
+    {
+      path: '/json-formatter',
+      name: 'json-formatter',
+      component: () => import('../views/JsonFormatterView.vue'),
+    },
+    {
+      path: '/url-decoder',
+      name: 'url-decoder',
+      component: () => import('../views/UrlDecoderView.vue'),
+    },
   ],
 })
 
