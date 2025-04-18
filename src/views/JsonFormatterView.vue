@@ -4,8 +4,9 @@ import { computed } from 'vue'
 import VueJsonPretty from 'vue-json-pretty'
 import 'vue-json-pretty/lib/styles.css'
 
-import { jsonInputStore } from '@/stores/stores.js'
+import { jsonInputStore } from '@/stores'
 
+// TODO: 失败时标记解析成功和失败的部分
 const jsonObj = computed(() => {
   try {
     return JSON.parse(jsonInputStore.value)

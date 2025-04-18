@@ -14,7 +14,6 @@ watch(activeRoute, async (n, o) => {
   if (n === o) {
     return
   }
-  console.log(n)
   router.push({ name: n })
 })
 </script>
