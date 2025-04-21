@@ -3,6 +3,8 @@ import { ref, reactive, watch } from 'vue'
 export const jsonInputStore = ref('{}')
 export const upsigUrlStore = ref('')
 
+export const numberBaseStore = ref(0)
+
 export const settings = reactive(
   JSON.parse(localStorage.getItem('settings')) || {
     upsigSecret: ['', ''],

@@ -8,11 +8,11 @@ import { settings, upsigUrlStore } from '@/stores'
 
 const secretMap = computed(() => {
   const secret = settings.upsigSecret
-  const a = secret[0]
-  const b = secret[1]
+  const f = secret[0]
+  const t = secret[1]
   const m = {}
-  for (let i = 0; i < a.length; i++) {
-    m[a[i]] = b[i]
+  for (let i = 0; i < f.length; i++) {
+    m[f[i]] = t[i]
   }
   return m
 })
@@ -27,7 +27,7 @@ const jsonObj = computed(() => {
     }
   }
   const m = secretMap.value
-  const s = Array.from(e).reduce((acc, c) => acc + m[c], '')
+  const s = Array.from(e).reduce((acc, c) => acc + (m[c] || c), '')
   return JSON.parse(atob(s) || '{}')
 })
 </script>

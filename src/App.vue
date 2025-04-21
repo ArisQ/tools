@@ -6,6 +6,7 @@ const routes = ref([
   { label: 'Json Formatter', route: 'json-formatter' },
   { label: 'URL Decoder', route: 'url-decoder' },
   { label: 'Upsig Decoder', route: 'upsig-decoder' },
+  { label: 'Number Base Converter', route: 'number-base-converter' },
   { label: 'Settings', route: 'settings' },
 ])
 

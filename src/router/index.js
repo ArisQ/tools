@@ -23,6 +23,11 @@ const router = createRouter({
       component: () => import('../views/UpsigDecoderView.vue'),
     },
     {
+      path: '/number-base-converter',
+      name: 'number-base-converter',
+      component: () => import('../views/NumberBaseConverter.vue'),
+    },
+    {
       path: '/settings',
       name: 'settings',
       component: () => import('../views/SettingView.vue'),
